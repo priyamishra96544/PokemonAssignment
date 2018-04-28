@@ -4063,7 +4063,7 @@ var pokemon= [{
   }, {
     "id": 151,
     "num": "151",
-    "name": "Mew",
+    "name": "mew",
     "img": "http://www.serebii.net/pokemongo/pokemon/151.png",
     "type": [
       "Psychic"
@@ -4087,22 +4087,19 @@ var pokemon= [{
 
   var pokemonName = function (name, allPokemon){
   var isPokemonFound=false
-  for(x in allPokemon){
-    if(allPokemon[x].name == name || allPokemon[x].name.toUpperCase() == name || allPokemon[x].name.toLowerCase() == name){
-      isPokemonFound = true
+  for(index in allPokemon){
+    if(allPokemon[index].name == name || allPokemon[index].name.toUpperCase() == name || allPokemon[index].name.toLowerCase() == name){
+      isPokemonFound = true // POKEMON FOUND
     }
-    if(x == allPokemon.length - 1){
+    if(index == allPokemon.length - 1){
       if(isPokemonFound){
-        alert()
-        console.log("mil gya");
+        alert(JSON.stringify(allPokemon[index])) // EXECUTING WHEN LOOP FINISHED
+        }
+      else{
+        alert(name+' not found')
+          }
       }
-else{
-  alert('ni mila yar')
-}
     }
   }
-
-
-}
   var name=window.prompt("Enter the name of pokemon to get its all the details!")
   pokemonName(name, pokemon)
